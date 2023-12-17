@@ -1,0 +1,79 @@
+
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+-- Base de données: `gsb`
+
+
+
+
+
+ table `frais_forfait`
+
+CREATE TABLE `frais_forfait` (
+  `fid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `mois` int(11) NOT NULL,
+  `annee` int(11) NOT NULL,
+  `repas` int(11) NOT NULL,
+  `crepas` int(11) NOT NULL,
+  `nuitees` int(11) NOT NULL,
+  `cnuitees` int(11) NOT NULL,
+  `etapes` int(11) NOT NULL,
+  `km` int(11) NOT NULL,
+  `nbpieces` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `frais_hf`
+--
+
+CREATE TABLE `frais_hf` (
+  `hfid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `fid` text NOT NULL,
+  `data` text NOT NULL,
+  PRIMARY KEY (`hfid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `type` int(1) NOT NULL,
+  `nom` text NOT NULL,
+  `prenom` text NOT NULL,
+  `tel` int(10) NOT NULL,
+  `adresse` text NOT NULL,
+  `cp` text NOT NULL,
+  `email` text NOT NULL,
+  `dateNaissance` DATE NULL,
+  `dateEmbauche` DATE NULL
+
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `valides`
+--
+
+CREATE TABLE `valides` (
+  `fid` int(11) NOT NULL,
+  `etat` int(11) NOT NULL,
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
